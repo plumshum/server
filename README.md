@@ -1,7 +1,7 @@
 This is a MERN project from a Youtube Tutorial :D 
 Link to project: https://www.youtube.com/watch?v=K8YELRmUb5o
 
-### DAY 1: Understanding MERN Stack and Setting up the Backend Server and Configurations
+### DAY 1: Understanding MERN Stack and Setting up the Backend Server and Configurations, and Data Modeling
 
 MERN Stack: MongoDB, Express, React, Node.js
 
@@ -18,3 +18,7 @@ There's a bunch of configurations, Ill slowly go over them throughou the project
 - ```helmet()``` is a middleware that helps secure the app by setting various HTTP headers.
 - ```cors()``` is a middleware that enables the server to allow requests from different origins.
 - ```dotenv``` is a module that loads environment variables from a .env file into `process.env`.
+
+Data Modeling:
+![alt text](image.png)
+- Interesting to note that `User` and `Friend` are not treated as the same object in the database. This is because the `Friend` object is a subdocument of the `User` object. MongoDB is a NoSQL database, so we can have nested objects like this.
