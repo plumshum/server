@@ -10,6 +10,9 @@ import path from "path";
 import { fileURLToPath } from "url";
 import authRoutes from "./routes/auth.js";
 import {register} from "./controllers/auth.js";
+import userRoutes from "./routes/users.js";
+import postRoutes from "./routes/posts.js";
+import { verifyToken } from "./middleware/auth.js";
 
 /* CONFIGURATIONS */
 //only when we use type modules
@@ -40,12 +43,14 @@ const upload = multer({ storage }); //save file to storage
 
 /* Routes with files*/
 app.post("/auth/register", upload.single("picture"), register); 
+app.post("/posts", verifyToken,upload.single("picture"), createPost);
 
 // verifyToken is middleware to upload file. registration doesn't need that yet
 
 /* ROUTES */
 app.use("/auth", authRoutes);
-
+app.use("/users", userRoutes);
+app.use("/posts", postRoutes);
 
 /* MONGOOSE SETUP */
 const PORT = process.env.PORT || 6001;
