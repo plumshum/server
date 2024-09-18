@@ -41,3 +41,13 @@ Data Modeling:
 - set up the login and register routes in the auth controller. the register route hashes the password before saving it to the database.
 
 - usually companies have a third-party authenticator, which is way better than what we're doing lol 
+
+
+### Day 3: Setting up more Routes :D
+
+Got a bit lazy, but here's what we did
+- User Register and Login with authorization
+- Now we are going to create the routes for adding, getting friends, and maybe deleting friends?
+- liking and unlike posts
+- curating posts in feed (a very basic algorithm unlike the one in instagram)
+- create a `Post` model and a `Post` controller
