@@ -1,7 +1,5 @@
-import express from "express.js";
 import Post from "../models/Post.js";
 import User from "../models/User.js";
-
 
 /* CREATE */
 export const createPost = async (req, res) => {
@@ -31,7 +29,7 @@ export const createPost = async (req, res) => {
 }
 
 /* READ */
-export const getFreedPosts = async (req, res) => {
+export const getFeedPosts = async (req, res) => {
     try {
         const posts = await Post.find();
         res.status(200).json(posts);
@@ -72,6 +70,7 @@ export const likePosts = async (req, res) => {
 
         res.stats(200).json(updatedPost);
     }catch (err){
-
+        res.status(404).json({message: err.message});
     }
 }
+

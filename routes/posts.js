@@ -1,4 +1,4 @@
-import express from "express.js";
+import express from "express";
 import { getFeedPosts, getUserPosts, likePosts} from "../controllers/posts.js";
 import { verifyToken } from "../middleware/auth.js";
 
@@ -12,3 +12,5 @@ router.get("/:userId/posts", verifyToken, getUserPosts)
 /* UPDATE */
 // like or unlike Posts
 router.patch("/:id/like", verifyToken, likePosts);
+
+export default router;
